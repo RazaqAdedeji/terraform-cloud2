@@ -51,10 +51,10 @@ variable "name" {
   type    = string
 }
 
-variable "ami" {
-  type        = string
-  description = "AMI ID for the launch template"
-}
+#variable "ami" {
+#  type        = string
+#  description = "AMI ID for the launch template"
+#}
 
 variable "keypair" {
   type        = string
