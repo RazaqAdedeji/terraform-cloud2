@@ -60,7 +60,7 @@ resource "aws_launch_template" "nginx-launch-template" {
     tags = merge(
       var.tags,
       {
-        Name = "nginx-launch-template"
+        Name = "ACS-nginx"
       },
     )
   }
