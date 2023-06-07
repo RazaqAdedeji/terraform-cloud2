@@ -40,17 +40,17 @@ resource "aws_lb_target_group" "nginx-tgt" {
 
 #------- Then we will need to create a Listner for the LB
 
-resource "aws_lb_listener" "nginx-listner" {
-  load_balancer_arn = aws_lb.ext-alb.arn
-  port              = 443
-  protocol          = "HTTPS"
-  certificate_arn   = aws_acm_certificate_validation.toolingrazaq.certificate_arn
+#resource "aws_lb_listener" "nginx-listner" {
+#  load_balancer_arn = aws_lb.ext-alb.arn
+#  port              = 443
+#  protocol          = "HTTPS"
+#  certificate_arn   = aws_acm_certificate_validation.toolingrazaq.certificate_arn
 
-  default_action {
-    type             = "forward"
-    target_group_arn = aws_lb_target_group.nginx-tgt.arn
-  }
-}
+#  default_action {
+#    type             = "forward"
+#    target_group_arn = aws_lb_target_group.nginx-tgt.arn
+#  }
+#}
 
 
 # ------Create an Internal (Internal) Application Load Balancer (ALB)
@@ -139,18 +139,18 @@ resource "aws_lb_listener" "web-listener" {
 
 # listener rule for tooling target
 
-resource "aws_lb_listener_rule" "tooling-listener" {
-  listener_arn = aws_lb_listener.web-listener.arn
-  priority     = 99
+#resource "aws_lb_listener_rule" "tooling-listener" {
+#  listener_arn = aws_lb_listener.web-listener.arn
+#  priority     = 99
 
-  action {
-    type             = "forward"
-    target_group_arn = aws_lb_target_group.tooling-tgt.arn
-  }
+#  action {
+#    type             = "forward"
+#    target_group_arn = aws_lb_target_group.tooling-tgt.arn
+#  }
 
-  condition {
-    host_header {
-      values = ["tooling.toolingrazaq.com"]
-    }
-  }
-}
+#  condition {
+#    host_header {
+#      values = ["tooling.toolingrazaq.com"]
+#    }
+#  }
+#}
