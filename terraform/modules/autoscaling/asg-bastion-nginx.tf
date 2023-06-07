@@ -80,7 +80,7 @@ resource "aws_autoscaling_group" "nginx-asg" {
 
   tag {
     key                 = "Name"
-    value               = "nginx-launch-template"
+    value               = "ACS-nginx"
     propagate_at_launch = true
   }
 

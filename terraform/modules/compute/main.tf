@@ -16,7 +16,7 @@ resource "aws_instance" "Jenkins" {
 }
 
 
-#create instance for sonbarqube
+#create instance for sonarqube
 resource "aws_instance" "sonarqube" {
   ami                         = var.ami-sonar
   instance_type               = "t2.medium"
@@ -29,7 +29,7 @@ resource "aws_instance" "sonarqube" {
    tags = merge(
     var.tags,
     {
-      Name = "ACS-sonbarqube"
+      Name = "ACS-sonarqube"
     },
   )
 }
