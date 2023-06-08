@@ -17,8 +17,8 @@ filters:
     - ACS-tooling
     - ACS-wordpress
     - ACS-sonarqube
-    - ACS-artifactory
-    - ACS-Jenkins
+    #- ACS-artifactory
+    #- ACS-Jenkins
   instance-state-name : running
   
 hostnames:
